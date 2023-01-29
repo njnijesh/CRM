@@ -7,12 +7,13 @@ import TopNav from "../topnav/TopNav";
 import Routes from "../Routes";
 import Login from "../../pages/Login";
 
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 
 import ThemeAction from "../../redux/actions/ThemeAction";
 import RenderIf from "../common/RenderIf";
+import Landing from "../../pages/Landing";
 
 const Layout = () => {
   const themeReducer = useSelector((state) => state.ThemeReducer);
@@ -31,7 +32,14 @@ const Layout = () => {
   return (
     <BrowserRouter>
       <RenderIf isTrue={!userReducer?.loggedIn}>
-        <Route path="/login" component={<Login />} />
+        <Switch>
+          <Route exact path="/">
+            <Landing />
+          </Route>
+        </Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
       </RenderIf>
       <RenderIf isTrue={userReducer?.loggedIn}>
         <Route
