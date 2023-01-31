@@ -1,9 +1,7 @@
 import { useState } from "react";
 import Accordion from "./Accordion";
-import "./faq.css";
 
 import useFaqContent from "../../../hooks/landing/useFaqContent";
-import Section from "../../common/Section";
 
 const FAQ = () => {
   // Fetch Contents
@@ -22,19 +20,21 @@ const FAQ = () => {
     }
   };
   return (
-    <Section classNames="flex-col justify-center items-center pb-24 gap-8">
-      <h2 className="text-4xl font-black leading-tight">{title}</h2>
+    <div className="max-w-screen-xl px-4 pb-8 w-full lg:pb-24 lg:px-6">
+      <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-center text-gray-900 lg:mb-8 lg:text-3xl">
+        {title}
+      </h2>
       {faqs.map((item, index) => (
-        <div className="faq__accordion" key={index}>
+        <div className="max-w-screen-md mx-auto" key={index}>
           <Accordion
-            onClick={onItemClick}
+            onItemClick={onItemClick}
             active={active === index}
             data={item}
             index={index}
           />
         </div>
       ))}
-    </Section>
+    </div>
   );
 };
 

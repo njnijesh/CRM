@@ -3,7 +3,12 @@ import heroImage from "../../assets/images/landing-hero.png";
 
 export default function useHeroContent() {
   const [store, setStore] = useState({
-    title: "Building digital products & brands.",
+    title: (
+      <>
+        Building digital <br />
+        products & brands.
+      </>
+    ),
     description:
       " Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.",
     primaryButton: {

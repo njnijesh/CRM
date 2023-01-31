@@ -1,19 +1,15 @@
-const ChevronUp = (props) => {
+const ChevronUp = ({ classNames }) => {
   return (
     <svg
-      width={17}
-      height={16}
-      viewBox="0 0 17 16"
-      fill="none"
+      fill="currentColor"
+      viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
-      className={props.color || "stroke-cst-grey-500"}
-      transform={props.transform || "scale(1,1)"}
+      className={classNames}
     >
       <path
-        d="M3.833 10 8.5 5.333 13.167 10"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        fillRule="evenodd"
+        d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z"
+        clipRule="evenodd"
       />
     </svg>
   );

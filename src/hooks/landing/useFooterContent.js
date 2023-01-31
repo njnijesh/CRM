@@ -4,14 +4,15 @@ import Github from "../../icons/Github";
 import Twitter from "../../icons/Twitter";
 import Dribbble from "../../icons/Dribbble";
 import Facebook from "../../icons/Facebook";
+
 const useFooterContent = () => {
   const [store, setStore] = useState({
     copyright: "© 2022 Flowbite, Inc. All rights reserved.",
     socials: [
-      { icon: <Github />, url: "#" },
-      { icon: <Twitter />, url: "#" },
-      { icon: <Dribbble />, url: "#" },
-      { icon: <Facebook />, url: "#" },
+      { icon: <Github classNames="w-5 h-5" />, url: "#" },
+      { icon: <Twitter classNames="w-5 h-5" />, url: "#" },
+      { icon: <Dribbble classNames="w-5 h-5" />, url: "#" },
+      { icon: <Facebook classNames="w-5 h-5" />, url: "#" },
     ],
 
     links: [

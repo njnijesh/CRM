@@ -8,17 +8,24 @@ const Features = () => {
   const [content] = useFeaturesContent();
 
   return (
-    <div className="py-24 px-20 flex flex-col gap-20 box-border">
+    <div className="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
       {content.map(({ image, ...rest }, index) => (
-        <Row key={index} classNames="gap-16">
+        <div
+          className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16"
+          key={index}
+        >
           <RenderIf isTrue={!(index % 2)}>
-            <FeatureContent data={rest} />
+            <FeatureContent margin data={rest} />
           </RenderIf>
-          <img className="features__tools" src={image.src} alt={image.alt} />
+          <img
+            className="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
+            src={image.src}
+            alt={image.alt}
+          />
           <RenderIf isTrue={index % 2}>
             <FeatureContent data={rest} />
           </RenderIf>
-        </Row>
+        </div>
       ))}
     </div>
   );

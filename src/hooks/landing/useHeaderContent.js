@@ -6,6 +6,7 @@ export default function useHeaderContent() {
     logo: <Logo />,
     companyName: "Landwind",
     links: [
+      { name: "Home", link: "#" },
       { name: "Company", link: "#" },
       { name: "Marketplace", link: "#" },
       { name: "Features", link: "#" },

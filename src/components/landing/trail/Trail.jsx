@@ -8,17 +8,19 @@ const Trail = () => {
   const [{ title, description, btn }] = useTrailContent();
 
   return (
-    <Section classNames="py-24 items-center justify-center bg-cst-grey-50">
-      <div className="max-w-screen-sm flex flex-col gap-6">
-        <h2 className="leading-tight text-4xl font-black text-center text-cst-grey-900">
+    <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+      <div className="max-w-screen-sm mx-auto text-center">
+        <h2 className="mb-4 text-3xl font-black leading-tight tracking-tight text-gray-900">
           {title}
         </h2>
-        <p className="text-xl font-normal text-cst-grey-500">{description}</p>
+        <p className="mb-6 font-light text-gray-500 md:text-lg">
+          {description}
+        </p>
         <Link className="flex justify-center" to={btn.url}>
           <Button value={btn.text} />
         </Link>
       </div>
-    </Section>
+    </div>
   );
 };
 export default Trail;

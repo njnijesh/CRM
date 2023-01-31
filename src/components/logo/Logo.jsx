@@ -1,11 +1,18 @@
+import { Link } from "react-router-dom";
 import Logo from "../../icons/Logo";
 
-const CompanyLogo = () => {
+const CompanyLogo = ({ size }) => {
   return (
-    <div className="flex gap-1.5 items-center justify-center flex-center cursor-pointer">
-      <Logo />
-      <p className="text-2xl font-bold text-cst-grey-900">Landwind</p>
-    </div>
+    <Link to="/" className="flex items-center justify-center">
+      <Logo classNames="h-6 mr-3 sm:h-9" />
+      <span
+        className={`self-center font-semibold whitespace-nowrap text-gray-900 ${
+          size ? size : "text-xl"
+        }`}
+      >
+        Landwind
+      </span>
+    </Link>
   );
 };
 export default CompanyLogo;

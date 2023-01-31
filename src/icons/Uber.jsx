@@ -1,4 +1,4 @@
-const Uber = () => {
+const Uber = ({ classNames }) => {
   return (
     <svg
       width={132}
@@ -6,6 +6,7 @@ const Uber = () => {
       viewBox="0 0 132 29"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={classNames}
     >
       <g
         clipPath="url(#a)"

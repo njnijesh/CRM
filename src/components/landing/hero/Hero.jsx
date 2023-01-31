@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 
 import "./Hero.css";
 import Button from "../../button";
-import Row from "../../common/Row";
-import Section from "../../common/Section";
 import useHeroContent from "../../../hooks/landing/useHeroContent";
 
 const Hero = () => {
@@ -11,27 +9,34 @@ const Hero = () => {
     useHeroContent();
 
   return (
-    <Section classNames="py-16">
-      <Row classNames="gap-3">
-        <div className="flex flex-col gap-10">
-          <div className="flex flex-col gap-6">
-            <h1 className="text-6xl font-black text-cst-grey-900">{title}</h1>
-            <p className="text-xl font-normal text-cst-grey-500">
-              {description}
-            </p>
-          </div>
-          <div className="flex gap-4">
-            <Link to={primaryButton.link}>
-              <Button value={primaryButton.text} />
-            </Link>
-            <Link to={secondaryButton.link}>
-              <Button value={secondaryButton.text} btnType="outline" />
-            </Link>
-          </div>
+    <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
+      <div className="mr-auto place-self-center lg:col-span-7">
+        <h1 className="max-w-2xl mb-4 text-4xl font-black leading-none tracking-tight md:text-5xl xl:text-6xl">
+          {title}
+        </h1>
+        <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">
+          {description}
+        </p>
+        <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+          <Link className="w-full sm:w-auto block mb-4" to={primaryButton.link}>
+            <Button
+              value={primaryButton.text}
+              classNames="w-full sm:w-auto sm:h-11"
+            />
+          </Link>
+          <Link to={secondaryButton.link}>
+            <Button
+              value={secondaryButton.text}
+              btnType="outline"
+              classNames="sm:h-11"
+            />
+          </Link>
         </div>
-        <img className="hero__image" src={image} alt="Hero Logo" />
-      </Row>
-    </Section>
+      </div>
+      <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+        <img src={image} alt="Hero Logo" />
+      </div>
+    </div>
   );
 };
 export default Hero;

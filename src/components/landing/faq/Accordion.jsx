@@ -1,21 +1,25 @@
 import ChevronUp from "../../../icons/ChevronUp";
-import Seperator from "./Seperator";
-
-const Accordion = ({ data, index, active, onClick }) => {
+import RenderIf from "../../common/RenderIf";
+const Accordion = ({ data, index, active, onItemClick }) => {
+  console.log(active);
   return (
     <>
       <div
-        onClick={() => onClick(index)}
-        className="py-6 flex justify-between text-lg font-medium text-cst-grey-900 cursor-pointer"
+        onClick={() => onItemClick(index)}
+        className={`items-center flex justify-between ${
+          active ? "bg-white text-gray-900" : "text-gray-500"
+        }`}
       >
-        {data.title}
+        <h3 className=" w-full py-5 font-medium text-left bg-white border-b border-gray-200">
+          {data.title}
+        </h3>
         <ChevronUp
-          color={active ? "stroke-cst-grey-900" : "stroke-cst-grey-500"}
-          transform={active ? "scale(1,1)" : "scale(1,-1)"}
+          classNames={`${active ? "rotate-180" : ""} w-6 h-6 shrink-0`}
         />
       </div>
-      <Seperator />
-      {active && <div className="py-5">{data.content}</div>}
+      <RenderIf isTrue={active}>
+        <div className="py-5 border-b border-gray-200">{data.content}</div>
+      </RenderIf>
     </>
   );
 };

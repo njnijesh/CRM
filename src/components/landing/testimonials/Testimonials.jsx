@@ -1,31 +1,29 @@
 import useTestimonialsContent from "../../../hooks/landing/useTestimonialsContent";
 import Quote from "../../../icons/Quote";
-import Section from "../../common/Section";
 
 const Testimonials = () => {
   const [{ comment, user }] = useTestimonialsContent();
 
   return (
-    <Section classNames="py-24 items-center justify-center">
-      <div className="gap-6 flex flex-col max-w-screen-md items-center">
-        <Quote />
-        <p className="text-2xl text-cst-grey-900 font-semibold text-center">
-          {comment}
-        </p>
-        <div className="flex gap-3 items-center">
-          <img className="mr-px" src={user.img} alt="User" />
-          <p className="text-base font-semibold text-cst-grey-900">
-            {user.name}
+    <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
+      <figure className="max-w-screen-md mx-auto">
+        <Quote classNames="h-12 mx-auto mb-3 text-gray-400" />
+        <blockquote>
+          <p className="text-xl font-medium text-gray-900 md:text-2xl">
+            {comment}
           </p>
-          <p className="text-base font-semibold text-cst-grey-900 self-end">
-            /
-          </p>
-          <p className="text-sm font-normal text-cst-grey-500 self-end">
-            {user.position}
-          </p>
-        </div>
-      </div>
-    </Section>
+        </blockquote>
+        <figcaption className="flex items-center justify-center mt-6 space-x-3">
+          <img className="w-6 h-6 rounded-full" src={user.img} alt="User" />
+          <div className="flex items-center divide-x-2 divide-gray-500">
+            <p className="pr-3 font-medium text-gray-900">{user.name}</p>
+            <p className="pl-3 text-sm font-light text-gray-500">
+              {user.position}
+            </p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
   );
 };
 export default Testimonials;

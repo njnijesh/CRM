@@ -5,24 +5,18 @@ import { Link } from "react-router-dom";
 
 const Card = ({ content }) => {
   return (
-    <div className="pricing__card p-8 border border-cst-grey-200 divide-solid flex flex-col gap-8 rounded-lg">
-      <div className="flex flex-col gap-4">
-        <h3 className="text-2xl font-semibold text-cst-grey-900 text-center">
-          {content.title}
-        </h3>
-        <p className="text-lg font-normal text-cst-grey-500 text-center">
-          {content.desc}
-        </p>
+    <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow xl:p-8">
+      <h3 className="mb-4 text-2xl font-semibold">{content.title}</h3>
+      <p className="font-light text-gray-500 sm:text-lg">{content.desc}</p>
+      <div className="flex items-baseline justify-center my-8">
+        <span className="mr-2 text-5xl font-black">{content.price}</span>
+        <span className="text-gray-500">/month</span>
       </div>
-      <div className="flex gap-2.5 mx-auto">
-        <p className="text-5xl font-black text-cst-grey-900">{content.price}</p>
-        <p className="text-lg font-medium text-cst-grey-500 self-end">/month</p>
-      </div>
-      <ul className="flex flex-col gap-4">
+      <ul className="mb-8 space-y-4 text-left">
         {content.features.map((feature, index) => (
-          <li className="flex gap-2.5 items-center" key={index}>
-            <Check />
-            <p className="text-base font-normal text-cst-grey-900">{feature}</p>
+          <li className="flex items-center space-x-3" key={index}>
+            <Check classNames="flex-shrink-0 w-5 h-5 text-green-500" />
+            <span>{feature}</span>
           </li>
         ))}
       </ul>

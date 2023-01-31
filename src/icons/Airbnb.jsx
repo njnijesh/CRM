@@ -1,4 +1,4 @@
-const Airbnb = () => {
+const Airbnb = ({ classNames }) => {
   return (
     <svg
       width={111}
@@ -6,6 +6,7 @@ const Airbnb = () => {
       viewBox="0 0 111 55"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={classNames}
     >
       <path
         fillRule="evenodd"

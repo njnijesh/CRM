@@ -1,31 +1,33 @@
 import RenderIf from "../../common/RenderIf";
 import CheckCircle from "../../../icons/CheckCircle";
-import Seperator from "../../common/Seperator";
 
-const FeatureContent = ({ data }) => {
+const FeatureContent = ({ data, margin }) => {
   const { title, description, features, footerText } = data;
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-col gap-4">
-        <h2 className="text-4xl text-cst-grey-900 font-black">{title}</h2>
-        <p className="text-xl text-cst-grey-500 font-normal">{description}</p>
-      </div>
-      <Seperator gap="8" />
-      <div className="flex flex-col gap-6">
-        <ul className="flex flex-col gap-4">
-          {features?.map((feature, index) => (
-            <li key={index} className="flex items-center flex-row gap-2">
-              <CheckCircle />
-              <p className="text-base text-cst-grey-900 font-medium">
-                {feature}
-              </p>
-            </li>
-          ))}
-        </ul>
-        <RenderIf isTrue={footerText}>
-          <p className="text-xl text-cst-grey-500 font-normal">{footerText}</p>
-        </RenderIf>
-      </div>
+    <div className="text-gray-500 sm:text-lg">
+      <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">
+        {title}
+      </h2>
+      <p className="mb-8 font-light lg:text-xl">{description}</p>
+      <ul className="pt-8 space-y-5 border-t border-gray-200 my-7">
+        {features?.map((feature, index) => (
+          <li key={index} className="flex space-x-3">
+            <CheckCircle classNames="flex-shrink-0 w-5 h-5 text-purple-500" />
+            <span className="text-base font-medium leading-tight text-gray-900">
+              {feature}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <RenderIf isTrue={footerText}>
+        <p
+          className={
+            margin ? "mb-8 font-light lg:text-xl" : "font-light lg:text-xl"
+          }
+        >
+          {footerText}
+        </p>
+      </RenderIf>
     </div>
   );
 };

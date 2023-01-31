@@ -17,26 +17,34 @@ export default function useSocialProofContent() {
     stats: [
       [
         {
-          icon: <Server />,
+          icon: (
+            <Server classNames="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12" />
+          ),
           title: "99.99% uptime",
           description: "for Flowbite, with zero maintenance downtime",
         },
         {
-          icon: <Users />,
+          icon: (
+            <Users classNames="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12" />
+          ),
           title: "600M+ Users",
           description: "trusted by over 600 milion users around the world",
         },
       ],
       [
         {
-          icon: <Cart />,
-          title: "Millions",
-          description: "of transactions processed every day",
-        },
-        {
-          icon: <Globe />,
+          icon: (
+            <Globe classNames="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12" />
+          ),
           title: "100+ countries",
           description: "have used Flowbite to create functional websites",
+        },
+        {
+          icon: (
+            <Cart classNames="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12" />
+          ),
+          title: "Millions",
+          description: "of transactions processed every day",
         },
       ],
     ],

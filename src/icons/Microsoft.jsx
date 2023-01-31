@@ -1,4 +1,4 @@
-const Microsoft = () => {
+const Microsoft = ({ classNames }) => {
   return (
     <svg
       width={151}
@@ -6,6 +6,7 @@ const Microsoft = () => {
       viewBox="0 0 151 33"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={classNames}
     >
       <g clipPath="url(#a)">
         <path

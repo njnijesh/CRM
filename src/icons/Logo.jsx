@@ -1,4 +1,4 @@
-const Logo = () => {
+const Logo = ({ classNames }) => {
   return (
     <svg
       width={30}
@@ -6,6 +6,7 @@ const Logo = () => {
       viewBox="0 0 30 33"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={classNames}
     >
       <mask
         id="mask0_1_16014"

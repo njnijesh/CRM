@@ -1,4 +1,4 @@
-const Server = () => {
+const Server = ({ classNames }) => {
   return (
     <svg
       width={48}
@@ -6,6 +6,7 @@ const Server = () => {
       viewBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={classNames}
     >
       <path
         fillRule="evenodd"
