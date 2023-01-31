@@ -7,7 +7,7 @@ import TopNav from "../topnav/TopNav";
 import Routes from "../Routes";
 import Login from "../../pages/Login";
 
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 
