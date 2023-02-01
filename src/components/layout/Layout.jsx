@@ -1,17 +1,19 @@
 import React, { useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import "./layout.css";
 
 import Sidebar from "../sidebar/Sidebar";
 import TopNav from "../topnav/TopNav";
 import Routes from "../Routes";
-import Login from "../../pages/Login";
+// import Login from "../../pages/Login";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 
 import ThemeAction from "../../redux/actions/ThemeAction";
+import UserAction from "../../redux/actions/UserAction";
 import RenderIf from "../common/RenderIf";
 import Landing from "../../pages/Landing";
 
@@ -19,6 +21,16 @@ const Layout = () => {
   const themeReducer = useSelector((state) => state.ThemeReducer);
   const userReducer = useSelector((state) => state.UserReducer);
   const dispatch = useDispatch();
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
+  useEffect(() => {
+    const userLoggedIn =
+      isAuthenticated && !isLoading && !userReducer?.loggedIn;
+    if (userLoggedIn) {
+      dispatch(UserAction.setUser(user));
+    }
+  }, [isAuthenticated, isLoading, user, dispatch, userReducer?.loggedIn]);
+
   useEffect(() => {
     const themeClass = localStorage.getItem("themeMode", "theme-mode-light");
 
@@ -37,9 +49,9 @@ const Layout = () => {
             <Landing />
           </Route>
         </Switch>
-        <Route path="/login">
+        {/* <Route path="/login">
           <Login />
-        </Route>
+        </Route> */}
       </RenderIf>
       <RenderIf isTrue={userReducer?.loggedIn}>
         <Route

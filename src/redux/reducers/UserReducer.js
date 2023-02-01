@@ -1,5 +1,4 @@
 const INITIAL_STATE = {
-  name: "username",
   loggedIn: false,
 };
 

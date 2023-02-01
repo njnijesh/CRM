@@ -7,6 +7,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 import rootReducer from "./redux/reducers";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 import "./assets/boxicons-2.0.7/css/boxicons.min.css";
 import "./assets/css/grid.css";
@@ -20,11 +21,19 @@ const store = createStore(rootReducer);
 document.title = "Tua CRM";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <Layout />
-    </React.StrictMode>
-  </Provider>,
+  <Auth0Provider
+    domain="dev-v9m6ff3g.us.auth0.com"
+    clientId="Hv81soi6mLMGeikXuJJo5nTz91w40b1G"
+    authorizationParams={{
+      redirect_uri: window.location.origin,
+    }}
+  >
+    <Provider store={store}>
+      <React.StrictMode>
+        <Layout />
+      </React.StrictMode>
+    </Provider>
+  </Auth0Provider>,
   document.getElementById("root")
 );
 
