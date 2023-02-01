@@ -1,5 +1,4 @@
 import "./features.css";
-import Row from "../../common/Row";
 import RenderIf from "../../common/RenderIf";
 import FeatureContent from "./FeatureContent";
 import useFeaturesContent from "../../../hooks/landing/useFeaturesContent";

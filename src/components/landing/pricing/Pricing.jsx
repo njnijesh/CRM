@@ -1,5 +1,4 @@
 import Card from "./Card";
-import Section from "../../common/Section";
 import usePricingContent from "../../../hooks/landing/usePricingContent";
 
 const Pricing = () => {

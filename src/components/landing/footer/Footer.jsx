@@ -5,7 +5,7 @@ const Footer = () => {
   const [{ links, socials, copyright }] = useFooterContent();
   return (
     <footer>
-      <div className="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
+      <div className="max-w-screen-xl px-4 pt-4 pb-2 mx-auto lg:py-16 md:p-8 lg:p-10">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
           {links?.map((item) => (
             <div key={item.title}>

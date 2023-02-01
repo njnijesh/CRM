@@ -6,7 +6,7 @@ import "../assets/css/login.css";
 
 const Login = () => {
   return (
-    <main className="">
+    <main>
       <section className="absolute w-full h-full bg-green-500">
         <div className="login__bg absolute top-0 w-full h-full bg-gray-900"></div>
         <div className="container mx-auto px-4 h-full">

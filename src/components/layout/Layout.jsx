@@ -3,10 +3,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import "./layout.css";
 
+import Header from "../landing/header";
+import Footer from "../landing/footer";
 import Sidebar from "../sidebar/Sidebar";
 import TopNav from "../topnav/TopNav";
 import Routes from "../Routes";
-// import Login from "../../pages/Login";
+import Login from "../../pages/Login";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -43,15 +45,16 @@ const Layout = () => {
 
   return (
     <BrowserRouter>
+      <Header />
       <RenderIf isTrue={!userReducer?.loggedIn}>
         <Switch>
           <Route exact path="/">
             <Landing />
           </Route>
         </Switch>
-        {/* <Route path="/login">
+        <Route path="/login2">
           <Login />
-        </Route> */}
+        </Route>
       </RenderIf>
       <RenderIf isTrue={userReducer?.loggedIn}>
         <Route
@@ -70,6 +73,7 @@ const Layout = () => {
           )}
         />
       </RenderIf>
+      <Footer />
     </BrowserRouter>
   );
 };

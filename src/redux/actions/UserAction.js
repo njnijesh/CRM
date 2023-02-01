@@ -4,5 +4,5 @@ const setUser = (payload) => {
     payload: { ...payload, loggedIn: true },
   };
 };
-
-export default { setUser };
+const exports = { setUser };
+export default exports;
