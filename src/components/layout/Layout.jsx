@@ -58,6 +58,7 @@ const Layout = () => {
 
   return (
     <BrowserRouter>
+      <RenderIf isTrue={isLoading && !userPersisted}></RenderIf>
       <LoadingPage />
       <Header />
       <RenderIf isTrue={!userReducer?.loggedIn && !userPersisted}>
