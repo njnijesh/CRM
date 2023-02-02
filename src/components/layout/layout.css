@@ -1,13 +1,15 @@
 .layout {
-    color: var(--txt-color);
+  color: var(--txt-color);
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .layout__content {
-    padding-left: var(--sidebar-width);
-    background-color: var(--second-bg);
-    min-height: 100vh;
+  /* padding-left: var(--sidebar-width); */
+  background-color: var(--second-bg);
+  min-height: 100vh;
 }
 
 .layout__content-main {
-    padding: 30px;
+  padding: 108px 30px 30px;
 }

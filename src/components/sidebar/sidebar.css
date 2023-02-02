@@ -1,13 +1,41 @@
 .sidebar {
   min-width: var(--sidebar-width);
-  /* height: calc(100vh - 60px - 553px); */
-  height: 100%;
-  position: fixed;
+  min-height: 100vh;
+  position: relative;
   left: 0;
-  top: 60px;
+  top: 0;
   background-color: var(--main-bg);
   box-shadow: var(--box-shadow);
   padding-top: 32px;
+  margin-bottom: 60px;
+}
+
+.sidebar__search {
+  position: relative;
+  height: 50px;
+  background-color: var(--main-bg);
+  display: flex;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin: 0 20px 30px;
+}
+
+.sidebar__search > input {
+  height: 100%;
+  width: 100%;
+  padding: 10px 60px 10px 20px;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  color: var(--txt-color);
+  background-color: var(--main-bg);
+}
+
+.sidebar__search > i {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 20px;
 }
 
 .sidebar__logo {

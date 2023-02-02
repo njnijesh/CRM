@@ -1,7 +1,6 @@
 import ChevronUp from "../../../icons/ChevronUp";
 import RenderIf from "../../common/RenderIf";
 const Accordion = ({ data, index, active, onItemClick }) => {
-  console.log(active);
   return (
     <>
       <div
