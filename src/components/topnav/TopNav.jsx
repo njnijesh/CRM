@@ -19,12 +19,15 @@ const curr_user = {
   image: user_image,
 };
 
-const renderNotificationItem = (item, index) => (
-  <div className="notification-item" key={index}>
-    <i className={item.icon}></i>
-    <span>{item.content}</span>
-  </div>
-);
+const renderNotificationItem = (item, index) => {
+  console.log("Notification item");
+  return (
+    <div className="notification-item" key={index}>
+      <i className={item.icon}></i>
+      <span>{item.content}</span>
+    </div>
+  );
+};
 
 const renderUserToggle = (user) => (
   <div className="topnav__right-user">
